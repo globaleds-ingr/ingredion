@@ -1,0 +1,122 @@
+.quote {
+  background: var(--theme-clr-background);
+}
+
+.quoteblock-wrapper p {
+  margin: 0;
+}
+
+.quoteblock-wrapper .heading {
+  max-width: 50.3125rem;
+  margin: auto;
+}
+
+.heading h1 {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  letter-spacing: -.0313rem;
+}
+
+.quoteblock-wrapper .heading h1 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding: 0 2.5rem;
+}
+
+.quoteblock-wrapper h1 > p {
+  margin: 40px 0;
+}
+
+.quoteblock-wrapper .heading h1, .quoteblock-wrapper .heading h3 {
+  color: var(--theme-clr-text);
+}
+
+.quoteblock-wrapper .heading h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0 auto;
+  text-transform: capitalize;
+  letter-spacing: -.0313rem;
+}
+
+.heading-center {
+  text-align: center;
+}
+
+.label-text {
+  font-family: MiloPro-Bold, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: var(--text-color);
+}
+
+.quoteblock-wrapper .label-text {
+  margin: .5rem 0 0;
+  color: var(--theme-clr-text);
+}
+
+.label-text-center {
+  text-align: center;
+}
+
+.quoteblock-wrapper {
+  padding: 8.25rem 1rem;
+}
+
+.quoteblock-wrapper .heading h1::before {
+  content: '"';
+  left: 0;
+}
+
+.quoteblock-wrapper .heading h1::after {
+  content: '"';
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.quoteblock-wrapper .heading h1::after, .quoteblock-wrapper .heading h1::before {
+  position: absolute;
+  top: 0;
+  font-family: MiloPro-Bold, Helvetica, sans-serif;
+  font-size: 5.5rem;
+  line-height: 6.625rem;
+  letter-spacing: -.0313rem;
+}
+
+.section.quote-container .quote-wrapper {
+  margin: 5rem .9375rem;
+}
+
+@media (width >= 67.5625rem) {
+  .quoteblock-wrapper {
+    padding: 8.375rem 2.5rem;
+  }
+}
+
+@media (width >= 67.5625rem) {
+  .quoteblock-wrapper .heading h1::before {
+    left: -2.125rem;
+  }
+}
+
+@media (width >= 67.5625rem) {
+  .quoteblock-wrapper .heading h1::after {
+    right: -2.125rem;
+  }
+}
+
+@media (width >= 67.5625rem) {
+  .section.quote-container .quote-wrapper {
+    box-sizing: border-box;
+    max-width: 76.4375rem;
+    width: calc(100% - 80px);
+    margin: 0 auto;
+    border-radius: 4px;
+    background-color: var(--theme-clr-background);
+    box-shadow: 4px 20px 40px 4px color(srgb 0 0 0 / 10%);
+    padding: 2.5rem 6.5625rem 12.5rem;
+  }
+}

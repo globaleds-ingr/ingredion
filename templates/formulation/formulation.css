@@ -1,0 +1,57 @@
+.instructions-section {
+
+  .default-content-wrapper {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .instructions-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 150px;
+    width: 100%;
+  
+    .section.column-left, 
+    .section.column-right {
+      flex: 1;
+      max-width: 50%;
+  
+      > .default-content-wrapper {
+        text-align: left;
+        margin-bottom: 0;
+  
+        h1, h2, h3 {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media (width < 1080px) {
+
+  .instructions-section {
+
+    .default-content-wrapper {
+      margin-top: 50px;
+    }
+
+    .instructions-wrapper {
+      flex-direction: column;
+      gap: 0;
+      
+      .section.column-left, 
+      .section.column-right {
+        max-width: 80%;
+        margin: auto;
+  
+        > .default-content-wrapper {
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

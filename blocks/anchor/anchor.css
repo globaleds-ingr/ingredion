@@ -1,0 +1,57 @@
+.anchor-container .anchor-wrapper {
+  display: none;
+  background: var(--theme-clr-background);
+  box-shadow: 0 0 20px 0 rgba(0 0 0 / 10%);
+  max-width: unset;
+  margin: 0;
+}
+
+.anchor {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 76.5rem;
+  margin: auto;
+  height: 5rem;
+
+  a {
+    font-family: var(--heading-font-family);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: .0313rem;
+    color: #373738;
+    text-transform: uppercase;
+    padding: 0 1.25rem;
+  }
+
+  a:hover {
+    color: var(--green);
+    text-decoration: none;
+  }
+
+  .button-container p {
+    margin: 0;
+  }
+}
+
+@media (width >=1080px) {
+  .anchor-container .anchor-wrapper {
+    display: block;
+    
+  }
+
+  .is-fixed {
+    top: 0;
+    left: 0;
+    z-index: 50;
+    position: fixed;
+    width: 100%;
+    
+    a.active
+    {
+      color: var(--green);
+      text-decoration: none;
+    }
+  }
+}

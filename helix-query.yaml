@@ -1,0 +1,35 @@
+# query index configs are now managed in helix5
+# testing needs to be done locally, so keeping this config in git
+# documentaiton: https://www.aem.live/docs/admin.html#schema/IndexConfig
+# 1. login - https://admin.hlx.page/auth/adobe
+# 2. post body below to - https://admin.hlx.page/config/aemsites/sites/ingredion/content/query.yaml
+# content-type = text/yaml
+
+version: 1
+indices:
+  global-na-en-us:
+    include:
+      - /na/en-us/**
+    target: /na/en-us/indexes/global-index.json
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+          select: head > meta[property="og:image"]
+          value: attribute(el, 'content')
+      publishDate:
+        select: head > meta[name="published-date"]
+        value: parseTimestamp(attribute(el, "content"), "ddd, DD MMM YYYY hh:mm:ss GMT")
+      tags:
+        select: head > meta[property="article:tag"]
+        values: attribute(el, "content")
+      keywords:
+        select: head > meta[name="keywords"]
+        values: attribute(el, "content")
+      content:
+        select: main > div
+        values: characters(textContent(el), 0, 200)

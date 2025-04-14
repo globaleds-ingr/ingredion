@@ -1,0 +1,45 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword, no-descending-specificity */
+
+.pagination {
+  font-size: .8rem;
+
+  button {
+    line-height: 2rem;
+    padding: 0 12px;
+    margin: 0 2px;
+    color: var(--text-color);
+    background: transparent;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    &:hover { background: #eee }
+
+    &.active {
+      color: #fff;
+      background: var(--green);
+      cursor: default;
+    }
+
+    &:disabled {
+      color: #b2b4b3;
+      background: #fff;
+      cursor: default;
+    }
+
+    &.prev {
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    &.prev::before, &.next::after {
+      display: inline-block;
+      content: "\e904";
+      font-family: ingredion-icon;
+      -webkit-font-smoothing: antialiased;
+    }
+    &.prev::before { transform: rotate(180deg) }
+  }
+}
+
+
+

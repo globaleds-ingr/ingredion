@@ -1,0 +1,155 @@
+.hero-container .hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  height: 25.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero.homepage {
+  height: 38.75rem;
+  padding: 40px 0;
+}
+
+.hero.align-left > div {
+  text-align: left;
+}
+
+.hero h1 {
+  max-width: 1200px;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--theme-clr-background);
+  font-size: 3.5rem;
+}
+
+.hero.homepage h1 {
+  font-size: 4rem;
+  letter-spacing: -.0625rem;
+  line-height: 3.5rem;
+}
+
+.hero.homepage a {
+  color: var(--dark-grey);
+}
+
+.hero picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero picture::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0 0 0 / 0%) 0, black 150%);
+}
+
+.hero.homepage picture::before {
+  background: rgba(0 0 0 / 15%);
+}
+
+.hero img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.hero.block h1 + p {
+  color: var(--theme-clr-background);
+  font-size: 1.375rem;
+  line-height: 2rem;
+  letter-spacing: .0156rem;
+  padding: 0 .9375rem;
+}
+
+.hero.hide-description.block h1 + p {
+  display: none;
+}
+
+.hero div:nth-child(2) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero div:nth-child(2) > div {
+  max-width: 50.1875rem;
+  margin: auto;
+}
+
+.hero.homepage div:nth-child(2) > div {
+  max-width: 43.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 10rem - 2vw, 10rem);
+}
+
+.hero.hero.align-left div:nth-child(2) > div {
+  margin: 0;
+  padding-left: .9375rem;
+}
+
+@media (width >= 768px) {
+  .hero {
+    padding: 40px 32px;
+  }
+
+  .hero.homepage div:nth-child(2) > div {
+    gap: 0;
+    margin: 0;
+  }
+
+  .hero.block h1 + p {
+    display: block;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+
+  .hero.hide-description.block h1 + p {
+    display: block;
+    padding: 0;
+  }
+
+  .hero.homepage div:nth-child(2) > div p:first-of-type {
+    max-width: 29.375rem;
+  }
+}
+
+@media (width >= 1080px) {
+  .hero {
+    padding: 40px 32px;
+  }
+
+  .hero > div {
+    padding: 0 3.5rem;
+  }
+
+  .hero.align-left > div {
+    margin: auto;
+    padding-left: .9375rem;
+    max-width: 76.5rem;
+    width: 100%;
+  }
+
+  .hero.homepage h1 {
+    font-size: 3.5rem;
+    line-height: 5.5rem;
+  }
+
+  .hero div:nth-child(2) > div {
+    padding: 0 2.5rem;
+  }
+}
