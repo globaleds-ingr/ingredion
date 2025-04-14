@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Error</title>
+  <script type="text/javascript">
+    window.isErrorPage = true;
+    window.errorCode = '404';
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Error">
+  <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
+  <script type="module">
+    import { sampleRUM } from '/scripts/aem.js';
+    sampleRUM('404', { source: document.referrer });
+  </script>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/lazy-styles.css">
+</head>
+
+<body>
+  <header></header>
+  <main class="error">
+    <div class="section">
+      <div>
+        <div class="error-page">
+          <div class="error-block-wrapper">
+            <div class="img-caption">
+              <div class="img-caption-image">
+                <picture data-object-fit="cover">
+                  <source srcset="/img/not-found-banner.webp" type="image/webp">
+                  <img src="/img/not-found-banner.png" alt="Page not found">
+                </picture>
+              </div>
+            </div>
+            <div class="error-block-text">
+              <div class="heading">
+                <h1 id="errorHeading"></h1>
+              </div>
+              <p id="errorTitle" class="error-title"></p>
+              <p id="errorDescription" class="error-description"></p>
+              <a id="backToHomeBtn" class="button" href="#"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+
+  <script type="module">
+    import { getRegionLocale, loadTranslations } from '/scripts/utils.js';
+
+    async function loadData() {
+      const [region, locale] = getRegionLocale();
+      const data = await loadTranslations(locale);
+      window.translationData = data;
+      window.translationRegion = region;
+      window.translationLocale = locale;
+      window.dispatchEvent(new Event('translationsReady'));
+    }
+
+    loadData();
+  </script>
+
+  <script>
+    window.addEventListener('translationsReady', () => {
+      const data = window.translationData;
+      const region = window.translationRegion;
+      const locale = window.translationLocale;
+
+      document.getElementById('errorHeading').textContent = data['ops'];
+      document.getElementById('errorTitle').textContent = data['error-title'];
+      document.getElementById('errorDescription').textContent = data['error-description'];
+
+      const backBtn = document.getElementById('backToHomeBtn');
+      backBtn.textContent = data['back-to-home'];
+      backBtn.href = `/${region}/${locale}/`;
+    });
+  </script>
+</body>
+
+</html>

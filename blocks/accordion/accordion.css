@@ -1,0 +1,89 @@
+.accordion details {
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* stylelint-disable-next-line no-descending-specificity */
+  .accordion details + details {
+    margin-top: 24px;
+  }
+
+  .accordion.footer details + details {
+    margin-top: 0;
+  }
+  
+  .accordion details p {
+    margin-bottom: 0.8em;
+  }
+  
+  .accordion details summary {
+    position: relative;
+    padding-right: 46px;
+    cursor: pointer;
+    list-style: none;
+    overflow: auto;
+    transition: background-color 0.2s;
+  }
+
+  .accordion.footer details summary h4 {
+    font-family: var(--heading-font-family);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    line-height: 3.5rem;
+    margin: 0;
+  }
+  
+  .accordion details[open] summary {
+    background-color: var(--light-color);
+  }
+  
+  .accordion details summary:focus,
+  .accordion details summary:hover {
+    background-color: var(--light-color);
+  }
+  
+  .accordion details summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  .accordion.footer details summary::after {
+    font-family: ingredion-icon, sans-serif;
+    content: "\e926";
+    color: var(--green);
+    position: absolute;
+    top: 24px;
+    right: 1px;
+    font-size: .625rem;
+    width: 10px;
+    height: 10px;
+  }
+  
+  .accordion.footer details[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .accordion details .accordion-item-body {
+    padding: 0 16px;
+  }
+  
+  .accordion details[open] .accordion-item-body {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--background-color);
+  }
+
+  .accordion.footer details[open] .accordion-item-body {
+    border-top: none;
+    margin: .5rem .9375rem 1.5rem;
+    font-family: OpenSans,Helvetica,sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: .0156rem;
+  }
+
+  .accordion.footer details[open] .accordion-item-body p a {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 2.5rem;
+    letter-spacing: .0156rem;
+    padding: 10px 0;
+    text-decoration: none;
+  }

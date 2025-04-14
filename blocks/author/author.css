@@ -1,0 +1,67 @@
+.author {
+    display: flex;
+}
+
+.author-bio-image {
+    width: 100%;
+    max-width: 4.8125rem;
+    height: 5.125rem;
+    margin-right: 1.5rem;
+}
+
+.author-bio-text {
+    max-width: 33.25rem;
+}
+
+.heading h1, .heading h2, .heading h3, .heading h4, .heading h5, .heading h6 {
+    font-family: MiloPro-Bold, Helvetica, sans-serif;
+    margin: 0 0 1rem;
+    color: #373738;
+    line-height: 2rem;
+}
+
+.author-bio-text .heading h4 {
+    font-size: 1.5rem;
+}
+
+.body-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: .0156rem;
+    font-family: OpenSans-Regular, Helvetica, sans-serif;
+    color: #373738;
+}
+
+.author-wrapper {
+    margin: 5rem 0 0;
+    padding-top: 0;
+}
+
+@media (width >= 67.5625rem) {
+    .author {
+        flex-basis: 100%;
+    }
+}
+
+@media (width >= 67.5625rem) {
+    .author-bio-image {
+        margin-right: 2.5rem;
+        max-width: 10.625rem;
+        height: 11.1875rem;
+    }
+}
+
+@media (width >= 67.5625rem) {
+    .heading h4 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (width >= 67.5625rem) {
+    .author-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

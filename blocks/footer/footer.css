@@ -1,0 +1,158 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword, no-descending-specificity */
+
+footer {
+  font-size: var(--body-font-size-xs);
+  border-top: 1px solid var(--border-color);
+
+  ul, li { margin: 0 }
+
+  .footer > div {
+    margin: auto;
+    max-width: 1200px;
+    padding: 0 24px 24px;
+
+    @media (width >= 1080px) {
+      padding: 0 32px 24px;
+    }
+  }
+
+  .footer-utility {
+    border-top: 1px solid var(--border-color);
+
+    ul {
+      display: flex;
+      padding: .625rem .9375rem .625rem 0;
+
+      li {
+        list-style: none;
+        line-height: 1.75rem;
+        margin: 0 .9375rem 0 0;
+        display: inline-block;
+        font-size: .625rem;
+        font-family: var(--body-bold-font-family);
+        letter-spacing: .0156rem;
+        color: var(--text-color);
+        padding: .3125rem 0;
+
+        @media (width >= 768px) {
+          font-size: .75rem !important;
+        }
+
+        a {
+          color: var(--text-color);
+          word-break: auto-phrase;
+          &:hover { text-decoration: none }
+        }
+      }
+    }
+  }
+
+  .social-share {
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 13rem;
+      margin: auto;
+
+      /* icon on mobile */
+      .button { background: transparent }
+    }
+  }
+
+  @media (width >= 1080px) {
+    ul:first-of-type {
+      display: flex;
+      justify-content: left;
+      padding: 5rem 0;
+      gap: 5rem;
+    }
+
+    ul:first-of-type li {
+      list-style: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    ul ul:first-of-type {
+      padding: 10px 0;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    ul li:nth-child(2) ul:first-of-type {
+      flex-direction: row;
+    }
+
+    ul ul:first-of-type li {
+      list-style: none;
+      font-weight: normal;
+    }
+
+    ul li:nth-child(2) ul li {
+      display: flex;
+      gap: 20px;
+      max-width: 13rem;
+      flex-wrap: wrap;
+    }
+
+    ul ul:first-of-type li a {
+      color: var(--text-color);
+      text-decoration: none;
+      letter-spacing: .0156rem;
+      line-height: 2rem;
+    }
+
+    ul li:nth-child(2) ul li a {
+      border-radius: 50%;
+    }
+
+    ul ul:first-of-type li a:hover {
+      color: var(--green);
+    }
+
+  }
+}
+
+/* todo: revisit this approach so we are not duplicating content in footer.docx */
+.tab {
+  display: none;
+}
+
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: block;
+}
+
+/* Media Queries - Tablet */
+@media (width >= 768px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .tab {
+    display: block;
+  }
+}
+
+/* Media Queries - Desktop */
+@media (width >= 1080px) {
+  .mobile {
+    display: none;
+  }
+
+  .tab {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+}

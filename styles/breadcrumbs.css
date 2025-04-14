@@ -1,0 +1,35 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+
+.breadcrumbs {
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      display: inline;
+      position: relative;
+      font-family: OpenSans, Helvetica, sans-serif;
+      font-size: .75rem;
+      color: #373738;
+      letter-spacing: .016rem;
+      margin: 0;
+
+      a {
+        text-decoration: none;
+        color: #373738;
+        letter-spacing: .02rem;
+        &:hover { color: var(--green) }
+
+        &::after {
+          display: inline-block;
+          content: '\e904';
+          font-family: ingredion-icon;
+          margin: 0 4px 0 6px;
+          color: #4d4f53;
+          transform: translateY(1px);
+          -webkit-font-smoothing: antialiased;
+        }
+      }
+    }
+  }
+}
